@@ -20,7 +20,7 @@ public class Transaction {
 
     private LocalDate date;
 
-    private Type type;
+    private String type;
 
     private Double quantity;
 

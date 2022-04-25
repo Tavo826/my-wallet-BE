@@ -23,7 +23,7 @@ public class Reminder {
 
     private LocalDateTime remind;
 
-    private Type type;
+    private String type;
 
     private Double quantity;
 
