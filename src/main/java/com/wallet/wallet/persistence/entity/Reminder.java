@@ -19,9 +19,9 @@ public class Reminder {
     @Column(name = "wallet_id")
     private Long walletId;
 
-    LocalDate date;
+    private LocalDate date;
 
-    LocalDateTime remind;
+    private LocalDateTime remind;
 
     private Type type;
 

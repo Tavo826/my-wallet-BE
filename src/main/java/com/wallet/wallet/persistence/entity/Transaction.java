@@ -18,7 +18,7 @@ public class Transaction {
     @Column(name = "wallet_id")
     private Long walletId;
 
-    LocalDate date;
+    private LocalDate date;
 
     private Type type;
 
