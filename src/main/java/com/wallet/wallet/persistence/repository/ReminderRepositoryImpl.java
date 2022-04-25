@@ -1,4 +1,4 @@
-package com.wallet.persistence.repository;
+package com.wallet.wallet.persistence.repository;
 
 import org.springframework.stereotype.Repository;
 

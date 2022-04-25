@@ -1,10 +1,11 @@
-package com.wallet.persistence.entity;
+package com.wallet.wallet.persistence.entity;
 
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "reminders")
@@ -19,6 +20,8 @@ public class Reminder {
     private Long walletId;
 
     LocalDate date;
+
+    LocalDateTime remind;
 
     private Type type;
 

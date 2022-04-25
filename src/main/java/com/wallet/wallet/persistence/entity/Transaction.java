@@ -1,4 +1,4 @@
-package com.wallet.persistence.entity;
+package com.wallet.wallet.persistence.entity;
 
 import lombok.Getter;
 import lombok.Setter;

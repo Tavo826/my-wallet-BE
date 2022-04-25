@@ -1,8 +1,8 @@
-package com.wallet.persistence.crud;
+package com.wallet.wallet.persistence.crud;
 
-import com.wallet.persistence.entity.Reminder;
+import com.wallet.wallet.persistence.entity.Reminder;
 import org.springframework.data.repository.CrudRepository;
-import com.wallet.persistence.entity.Type;
+import com.wallet.wallet.persistence.entity.Type;
 
 import java.time.LocalDate;
 import java.util.List;
