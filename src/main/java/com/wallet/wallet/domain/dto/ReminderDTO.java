@@ -7,7 +7,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-public class Reminder {
+public class ReminderDTO {
 
     private String walletID;
     private LocalDate date;
@@ -16,9 +16,9 @@ public class Reminder {
     private String description;
     private LocalDateTime remindMe;
 
-    public Reminder() {}
+    public ReminderDTO() {}
 
-    public Reminder(
+    public ReminderDTO(
             @NonNull String walletID,
             @NonNull LocalDate date,
             @NonNull TypeEnum type,
@@ -86,7 +86,7 @@ public class Reminder {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Reminder reminder = (Reminder) o;
+        ReminderDTO reminder = (ReminderDTO) o;
         return Objects.equals(walletID, reminder.walletID) && Objects.equals(date, reminder.date) && type == reminder.type && Objects.equals(quantity, reminder.quantity) && Objects.equals(description, reminder.description) && Objects.equals(remindMe, reminder.remindMe);
     }
 
