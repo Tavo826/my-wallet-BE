@@ -1,13 +1,10 @@
 package com.wallet.wallet.domain.dto;
 
-import com.wallet.wallet.domain.enums.TypeEnum;
 import lombok.Getter;
-import lombok.NonNull;
 import lombok.Setter;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.Objects;
 
 @Getter @Setter
 public class ReminderDTO {
@@ -15,7 +12,7 @@ public class ReminderDTO {
     private String walletId;
     private Long reminderId;
     private LocalDate date;
-    private TypeEnum type;
+    private String type;
     private Double quantity;
     private String description;
     private LocalDateTime remind;

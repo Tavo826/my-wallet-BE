@@ -9,7 +9,7 @@ import java.util.Optional;
 
 public interface ReminderCrudRepository extends CrudRepository<Reminder, Long> {
 
-    Optional<List<Reminder>> findByDate(LocalDate date);
-    Optional<List<Reminder>> findByQuantity(double quantity);
-    List<Reminder> findByType(Type type);
+    List<Reminder> findByDate(LocalDate date);
+    List<Reminder> findByQuantity(double quantity);
+    List<Reminder> findByType(String type);
 }

@@ -1,8 +1,6 @@
 package com.wallet.wallet.domain.dto;
 
-import com.wallet.wallet.domain.enums.TypeEnum;
 import lombok.Getter;
-import lombok.NonNull;
 import lombok.Setter;
 
 import java.time.LocalDate;
@@ -14,7 +12,7 @@ public class TransactionDTO {
     private Long walletId;
     private Long transactiontId;
     private LocalDate date;
-    private TypeEnum type;
+    private String type;
     private Double quantity;
     private String description;
 
