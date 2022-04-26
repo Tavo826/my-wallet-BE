@@ -8,7 +8,9 @@ import com.wallet.wallet.persistence.mapper.ReminderMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public class ReminderRepositoryImpl  implements ReminderRepository {
@@ -20,9 +22,33 @@ public class ReminderRepositoryImpl  implements ReminderRepository {
     ReminderMapper mapper;
 
     @Override
-    public List<ReminderDTO> findAll() {
-        return mapper.toRemindersDTO((List<Reminder>) repository.findAll());
+    public List<ReminderDTO> findByWalletId(Long walletId) {
+        return null;
     }
 
-    //Here the logic to transform entitys to mapper
+    @Override
+    public ReminderDTO save() {
+        return null;
+    }
+
+    @Override
+    public Optional<ReminderDTO> findById(Long id) {
+        return Optional.empty();
+    }
+
+    @Override
+    public Optional<List<ReminderDTO>> findByDate(LocalDate date) {
+        return Optional.empty();
+    }
+
+    @Override
+    public Optional<List<ReminderDTO>> findByQuantity(double quantity) {
+        return Optional.empty();
+    }
+
+    @Override
+    public Optional<List<ReminderDTO>> findByType(String type) {
+        return Optional.empty();
+    }
+
 }
