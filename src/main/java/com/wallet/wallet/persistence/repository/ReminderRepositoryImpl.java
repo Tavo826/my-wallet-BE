@@ -21,7 +21,7 @@ public class ReminderRepositoryImpl  implements ReminderRepository {
 
     @Override
     public List<ReminderDTO> findAll() {
-        return mapper.toReminders((List<Reminder>) repository.findAll());
+        return mapper.toRemindersDTO((List<Reminder>) repository.findAll());
     }
 
     //Here the logic to transform entitys to mapper

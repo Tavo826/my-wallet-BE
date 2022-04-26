@@ -11,7 +11,7 @@ import java.util.List;
 public interface ReminderMapper {
 
     ReminderDTO toReminderDTO(Reminder reminder);
-    List<ReminderDTO> toReminders(List<Reminder> reminders);
+    List<ReminderDTO> toRemindersDTO(List<Reminder> reminders);
 
     @InheritInverseConfiguration
     Reminder toReminder(ReminderDTO reminderDTO);
