@@ -1,7 +1,6 @@
 package com.wallet.wallet.persistence.entity;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.List;
@@ -9,6 +8,9 @@ import java.util.List;
 @Entity
 @Table(name = "wallets")
 @Getter @Setter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class Wallet {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

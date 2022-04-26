@@ -1,7 +1,6 @@
 package com.wallet.wallet.persistence.entity;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -10,6 +9,9 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "reminders")
 @Getter @Setter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class Reminder {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

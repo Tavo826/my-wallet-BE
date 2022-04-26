@@ -1,19 +1,21 @@
 package com.wallet.wallet.domain.dto;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDate;
-import java.util.Objects;
 
 @Getter @Setter
+// for Testing
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class TransactionDTO {
 
-    private Long walletId;
-    private Long transactiontId;
+    private long walletId;
+    private long transactionId;
     private LocalDate date;
     private String type;
-    private Double quantity;
+    private double quantity;
     private String description;
 
 }

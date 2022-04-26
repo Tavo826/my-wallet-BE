@@ -4,6 +4,7 @@ import com.wallet.wallet.domain.dto.TransactionDTO;
 import com.wallet.wallet.persistence.entity.Transaction;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 
 import java.util.List;
 
@@ -11,9 +12,10 @@ import java.util.List;
 public interface TransactionMapper {
 
     TransactionDTO toTransactionDTO(Transaction transaction);
-    List<TransactionDTO> toTransactionsDTO(List<Transaction> transactions);
 
     @InheritInverseConfiguration
+    @Mapping(target = "walletTransaction", ignore = true)
     Transaction toTransaction(TransactionDTO transactionDTO);
 
+    List<TransactionDTO> toTransactionsDTO(List<Transaction> transactions);
 }

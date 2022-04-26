@@ -11,8 +11,9 @@ import java.util.List;
 public interface WalletMapper {
 
     WalletDTO toWalletDTO(Wallet wallet);
-    List<WalletDTO> toWalletsDTO(List<Wallet> wallets);
 
     @InheritInverseConfiguration
     Wallet toWallet(WalletDTO walletDTO);
+
+    List<WalletDTO> toWalletsDTO(List<Wallet> wallets);
 }

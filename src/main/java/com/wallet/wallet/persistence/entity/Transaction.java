@@ -1,7 +1,6 @@
 package com.wallet.wallet.persistence.entity;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -9,11 +8,14 @@ import java.time.LocalDate;
 @Entity
 @Table(name = "transactions")
 @Getter @Setter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class Transaction {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "transaction_id")
-    private Long transactiontId;
+    private Long transactionId;
 
     @Column(name = "wallet_id")
     private Long walletId;

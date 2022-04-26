@@ -4,6 +4,8 @@ import com.wallet.wallet.domain.dto.ReminderDTO;
 import com.wallet.wallet.persistence.entity.Reminder;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
+import org.mapstruct.ReportingPolicy;
 
 import java.util.List;
 
@@ -11,8 +13,11 @@ import java.util.List;
 public interface ReminderMapper {
 
     ReminderDTO toReminderDTO(Reminder reminder);
-    List<ReminderDTO> toRemindersDTO(List<Reminder> reminders);
+
 
     @InheritInverseConfiguration
+    @Mapping(target = "walletReminder", ignore = true)
     Reminder toReminder(ReminderDTO reminderDTO);
+
+    List<ReminderDTO> toRemindersDTO(List<Reminder> reminders);
 }
