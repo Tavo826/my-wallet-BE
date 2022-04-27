@@ -9,7 +9,7 @@ import java.util.Optional;
 public interface TransactionRepository {
 
     List<TransactionDTO> findByWalletId(Long walletId);
-    TransactionDTO save();
+    TransactionDTO save(TransactionDTO transactionDTO);
     Optional<TransactionDTO> findById(Long id);
     Optional<List<TransactionDTO>> findByDate(LocalDate date);
     Optional<List<TransactionDTO>> findByQuantity(double quantity);

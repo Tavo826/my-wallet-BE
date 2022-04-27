@@ -7,9 +7,11 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface WalletRepository{
+public interface WalletRepository {
     List<WalletDTO> findAll();
+
     Optional<WalletDTO> findByUserId(String userId);
-    WalletDTO save();
+
+    WalletDTO save(WalletDTO walletDTO);
 
 }
