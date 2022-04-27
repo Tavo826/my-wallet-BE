@@ -1,7 +1,18 @@
 package com.wallet.wallet.domain.repository;
 
-import org.springframework.stereotype.Repository;
+import com.wallet.wallet.domain.dto.WalletDTO;
 
-@Repository
+import java.util.List;
+import java.util.Optional;
+
+
 public interface WalletRepository{
+
+    Optional<WalletDTO> findByUserId(String userId);
+
+    WalletDTO save(WalletDTO walletDTO);
+
+    /*Admin*/
+    List<WalletDTO> findAll();
+
 }

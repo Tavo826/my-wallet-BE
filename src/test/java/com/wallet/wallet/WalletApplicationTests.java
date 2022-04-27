@@ -9,9 +9,9 @@ import static org.assertj.core.api.Assertions.assertThat;
 @SpringBootTest
 class WalletApplicationTests {
 
-	@Test
+	/*@Test
 	void contextLoads() {
 
-	}
+	}*/
 
 }
