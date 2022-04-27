@@ -23,4 +23,14 @@ public class ReminderRepositoryImpl implements ReminderRepository {
     public List<ReminderDTO> findAll() {
         return mapper.toRemindersDTO((List<Reminder>) repository.findAll());
     }
+
+    @Override
+    public ReminderDTO save(ReminderDTO reminderDTO) {
+        return mapper.toReminderDTO(repository.save(mapper.toReminder(reminderDTO)));
+    }
+
+    @Override
+    public void delete(ReminderDTO reminderDTO) {
+        repository.delete(mapper.toReminder(reminderDTO));
+    }
 }

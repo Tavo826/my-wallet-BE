@@ -1,11 +1,18 @@
 package com.wallet.wallet.domain.repository;
 
+import com.wallet.wallet.domain.dto.ReminderDTO;
 import com.wallet.wallet.domain.dto.TransactionDTO;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 
 public interface TransactionRepository {
 
-    String saveTransaction(TransactionDTO transactionDTO);
+    List<TransactionDTO> findAll();
+
+    TransactionDTO save(TransactionDTO transactionDTO);
+
+    void delete(TransactionDTO transactionDTO);
 
 }

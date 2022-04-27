@@ -1,5 +1,6 @@
 package com.wallet.wallet.domain.repository;
 
+import com.wallet.wallet.domain.dto.TransactionDTO;
 import com.wallet.wallet.domain.dto.WalletDTO;
 
 import java.util.List;
@@ -10,9 +11,10 @@ public interface WalletRepository{
 
     Optional<WalletDTO> findByUserId(String userId);
 
+    List<WalletDTO> findAll();
+
     WalletDTO save(WalletDTO walletDTO);
 
-    /*Admin*/
-    List<WalletDTO> findAll();
+    void delete(WalletDTO walletDTO);
 
 }

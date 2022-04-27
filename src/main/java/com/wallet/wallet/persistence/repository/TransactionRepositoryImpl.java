@@ -8,6 +8,8 @@ import com.wallet.wallet.persistence.mapper.TransactionMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public class TransactionRepositoryImpl implements TransactionRepository {
 
@@ -18,8 +20,17 @@ public class TransactionRepositoryImpl implements TransactionRepository {
     TransactionMapper mapper;
 
     @Override
-    public String saveTransaction(TransactionDTO transactionDTO) {
-        repository.save(mapper.toTransaction(transactionDTO));
-        return transactionDTO.getQuantity().toString();
+    public List<TransactionDTO> findAll() {
+        return mapper.toTransactionsDTO((List<Transaction>) repository.findAll());
+    }
+
+    @Override
+    public TransactionDTO save(TransactionDTO transactionDTO) {
+        return mapper.toTransactionDTO(repository.save(mapper.toTransaction(transactionDTO)));
+    }
+
+    @Override
+    public void delete(TransactionDTO transactionDTO) {
+        repository.delete(mapper.toTransaction(transactionDTO));
     }
 }

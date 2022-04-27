@@ -9,6 +9,8 @@ import java.util.List;
 import java.util.Optional;
 
 public interface TransactionCrudRepository extends CrudRepository<Transaction, Long> {
+
+    Optional<Transaction> findByTransactiontId(Long transactionId);
     List<Reminder> findByDate(LocalDate date);
     List<Reminder> findByQuantity(double quantity);
     List<Reminder> findByType(String type);

@@ -31,6 +31,11 @@ public class WalletRepositoryImpl implements WalletRepository {
 
     }
 
+    @Override
+    public void delete(WalletDTO walletDTO) {
+        repository.delete(mapper.toWallet(walletDTO));
+    }
+
     /*Admin*/
 
     @Override
