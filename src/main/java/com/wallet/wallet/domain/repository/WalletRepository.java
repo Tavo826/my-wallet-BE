@@ -15,6 +15,6 @@ public interface WalletRepository{
 
     WalletDTO save(WalletDTO walletDTO);
 
-    void delete(WalletDTO walletDTO);
+    boolean delete(Long walletId);
 
 }

@@ -13,6 +13,6 @@ public interface TransactionRepository {
 
     TransactionDTO save(TransactionDTO transactionDTO);
 
-    void delete(TransactionDTO transactionDTO);
+    boolean delete(Long transactionId);
 
 }

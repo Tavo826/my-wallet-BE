@@ -32,8 +32,15 @@ public class WalletRepositoryImpl implements WalletRepository {
     }
 
     @Override
-    public void delete(WalletDTO walletDTO) {
-        repository.delete(mapper.toWallet(walletDTO));
+    public boolean delete(Long walletId) {
+        try {
+            repository.deleteById(walletId);
+            return true;
+        } catch (Exception err) {
+            System.out.println("Wallet delete error" + err);
+            return false;
+        }
+
     }
 
     /*Admin*/

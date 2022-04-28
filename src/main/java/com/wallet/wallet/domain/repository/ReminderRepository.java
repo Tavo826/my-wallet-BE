@@ -13,6 +13,6 @@ public interface ReminderRepository {
 
     ReminderDTO save(ReminderDTO reminderDTO);
 
-    void delete(ReminderDTO reminderDTO);
+    boolean delete(Long reminderId);
 
 }

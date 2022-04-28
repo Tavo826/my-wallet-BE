@@ -30,7 +30,13 @@ public class TransactionRepositoryImpl implements TransactionRepository {
     }
 
     @Override
-    public void delete(TransactionDTO transactionDTO) {
-        repository.delete(mapper.toTransaction(transactionDTO));
+    public boolean delete(Long transactionId) {
+        try {
+            repository.deleteById(transactionId);
+            return true;
+        } catch (Exception err) {
+            System.out.println("Transaction delete error: " + err);
+            return false;
+        }
     }
 }

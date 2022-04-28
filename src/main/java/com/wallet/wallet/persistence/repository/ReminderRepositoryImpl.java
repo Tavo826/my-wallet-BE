@@ -30,7 +30,13 @@ public class ReminderRepositoryImpl implements ReminderRepository {
     }
 
     @Override
-    public void delete(ReminderDTO reminderDTO) {
-        repository.delete(mapper.toReminder(reminderDTO));
+    public boolean delete(Long reminderId) {
+        try {
+            repository.deleteById(reminderId);
+            return true;
+        } catch (Exception err) {
+            System.out.println("Reminder delete error: " + err);
+            return false;
+        }
     }
 }
