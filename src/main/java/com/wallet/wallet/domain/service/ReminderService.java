@@ -27,8 +27,8 @@ public class ReminderService {
         return repository.findById(id);
     }
 
-    public Optional<List<ReminderDTO>> getByDate(LocalDate date) {
-        return repository.findByDate(date);
+    public Optional<List<ReminderDTO>> getByDate(String date) {
+        return repository.findByDate(LocalDate.parse(date));
     }
 
     public Optional<List<ReminderDTO>> getByQuantity(double quantity) {
@@ -40,6 +40,10 @@ public class ReminderService {
     }
 
     public String deleteById(Long id) {
+        return repository.delete(id);
+    }
+
+    public String delete(Long id) {
         return repository.delete(id);
     }
 }
