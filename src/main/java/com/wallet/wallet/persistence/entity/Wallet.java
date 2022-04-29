@@ -24,9 +24,9 @@ public class Wallet {
 
     //Relations:
 
-    @OneToMany(mappedBy = "walletTransaction")
+    @OneToMany(mappedBy = "walletTransaction", cascade = {CascadeType.ALL})
     private List<Transaction> transactions;
 
-    @OneToMany(mappedBy = "walletReminder")
+    @OneToMany(mappedBy = "walletReminder", cascade = {CascadeType.ALL})
     private List<Reminder> reminders;
 }

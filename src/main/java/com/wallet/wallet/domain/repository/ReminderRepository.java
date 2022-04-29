@@ -8,6 +8,8 @@ import java.util.Optional;
 
 public interface ReminderRepository {
 
+    String delete(Long ReminderId);
+
     List<ReminderDTO> findByWalletId(Long walletId);
 
     ReminderDTO save(ReminderDTO reminderDTO);

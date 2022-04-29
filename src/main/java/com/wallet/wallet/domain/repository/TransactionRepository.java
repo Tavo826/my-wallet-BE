@@ -8,6 +8,8 @@ import java.util.Optional;
 
 public interface TransactionRepository {
 
+    String delete(Long transactionId);
+
     List<TransactionDTO> findByWalletId(Long walletId);
 
     TransactionDTO save(TransactionDTO transactionDTO);

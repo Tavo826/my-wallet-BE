@@ -22,15 +22,27 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.mapstruct:mapstruct:1.4.2.Final'
+
 	compileOnly 'org.projectlombok:lombok'
+
+	runtimeOnly 'org.postgresql:postgresql'
+	runtimeOnly 'mysql:mysql-connector-java'
+
 	annotationProcessor 'org.projectlombok:lombok'
 	annotationProcessor 'org.mapstruct:mapstruct-processor:1.4.2.Final'
+
+	testCompileOnly 'com.h2database:h2'
+
 	testImplementation 'junit:junit:4.13.2'
+	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
 	testImplementation 'org.mockito:mockito-all:1.10.19'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
+
 test {
+	//useJUnitPlatform()
+
 	useJUnit()
 
 	maxHeapSize = '1G'

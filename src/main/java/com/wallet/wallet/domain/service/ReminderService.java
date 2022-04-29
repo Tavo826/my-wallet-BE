@@ -15,27 +15,31 @@ public class ReminderService {
     @Autowired
     ReminderRepository repository;
 
-    public List<ReminderDTO> getByWalletId(Long walletId){
+    public List<ReminderDTO> getByWalletId(Long walletId) {
         return repository.findByWalletId(walletId);
     }
 
-    public ReminderDTO save(ReminderDTO reminder){
+    public ReminderDTO save(ReminderDTO reminder) {
         return repository.save(reminder);
     }
 
-    public Optional<ReminderDTO> getById(Long id){
+    public Optional<ReminderDTO> getById(Long id) {
         return repository.findById(id);
     }
 
-    public Optional<List<ReminderDTO>> getByDate(LocalDate date){
+    public Optional<List<ReminderDTO>> getByDate(LocalDate date) {
         return repository.findByDate(date);
     }
 
-    public Optional<List<ReminderDTO>> getByQuantity(double quantity){
+    public Optional<List<ReminderDTO>> getByQuantity(double quantity) {
         return repository.findByQuantity(quantity);
     }
 
-    public Optional<List<ReminderDTO>> getByType(String type){
+    public Optional<List<ReminderDTO>> getByType(String type) {
         return repository.findByType(type);
+    }
+
+    public String deleteById(Long id) {
+        return repository.delete(id);
     }
 }

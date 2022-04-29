@@ -22,6 +22,14 @@ public class TransactionRepositoryImpl implements TransactionRepository {
 
 
     @Override
+    public String delete(Long id) {
+        return findById(id).map(transactionDTO -> {
+            repository.deleteById(id);
+            return "Transaction with ID " + id + " Deleted!";
+        }).orElse("Transaction with ID " + id + " not Found!");
+    }
+
+    @Override
     public List<TransactionDTO> findByWalletId(Long id) {
         return mapper.toTransactionsDTO(repository.findByWalletId(id));
     }

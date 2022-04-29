@@ -23,19 +23,23 @@ public class TransactionService {
         return repository.save(transaction);
     }
 
-    public Optional<TransactionDTO> getById(Long id){
+    public Optional<TransactionDTO> getById(Long id) {
         return repository.findById(id);
     }
 
-    public Optional<List<TransactionDTO>> getByDate(LocalDate date){
+    public Optional<List<TransactionDTO>> getByDate(LocalDate date) {
         return repository.findByDate(date);
     }
 
-    public Optional<List<TransactionDTO>> getByQuantity(double quantity){
+    public Optional<List<TransactionDTO>> getByQuantity(double quantity) {
         return repository.findByQuantity(quantity);
     }
 
-    public Optional<List<TransactionDTO>> getByType(String type){
+    public Optional<List<TransactionDTO>> getByType(String type) {
         return repository.findByType(type);
+    }
+
+    public String deleteById(Long id) {
+        return repository.delete(id);
     }
 }

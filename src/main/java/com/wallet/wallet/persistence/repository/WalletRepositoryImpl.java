@@ -21,6 +21,14 @@ public class WalletRepositoryImpl implements WalletRepository {
     WalletMapper mapper;
 
     @Override
+    public String delete(Long id) {
+        return repository.findById(id).map(reminderDTO -> {
+            repository.deleteById(id);
+            return "Reminder with ID " + id + " Deleted!";
+        }).orElse("Reminder with ID " + id + " not Found!");
+    }
+
+    @Override
     public List<WalletDTO> findAll() {
         return mapper.toWalletsDTO((List<Wallet>) repository.findAll());
     }

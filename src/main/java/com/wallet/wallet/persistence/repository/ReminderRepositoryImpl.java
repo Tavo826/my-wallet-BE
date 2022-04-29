@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public class ReminderRepositoryImpl  implements ReminderRepository {
+public class ReminderRepositoryImpl implements ReminderRepository {
 
     @Autowired
     ReminderCrudRepository repository;
@@ -22,8 +22,16 @@ public class ReminderRepositoryImpl  implements ReminderRepository {
     ReminderMapper mapper;
 
     @Override
+    public String delete(Long id) {
+        return findById(id).map(reminderDTO -> {
+            repository.deleteById(id);
+            return "Reminder with ID " + id + " Deleted!";
+        }).orElse("Reminder with ID " + id + " not Found!");
+    }
+
+    @Override
     public List<ReminderDTO> findByWalletId(Long walletId) {
-        return  mapper.toRemindersDTO(repository.findByWalletId(walletId));
+        return mapper.toRemindersDTO(repository.findByWalletId(walletId));
     }
 
     @Override

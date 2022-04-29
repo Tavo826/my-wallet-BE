@@ -14,16 +14,20 @@ public class WalletService {
     @Autowired
     WalletRepository repository;
 
-    public List<WalletDTO> getAll(){
+    public List<WalletDTO> getAll() {
         return repository.findAll();
     }
 
-    public Optional<WalletDTO> getByUserId(String uId){
+    public Optional<WalletDTO> getByUserId(String uId) {
         return repository.findByUserId(uId);
     }
 
-    public WalletDTO saveWallet(WalletDTO wallet){
+    public WalletDTO saveWallet(WalletDTO wallet) {
         return repository.save(wallet);
+    }
+
+    public String delete(Long id) {
+        return repository.delete(id);
     }
 
 }

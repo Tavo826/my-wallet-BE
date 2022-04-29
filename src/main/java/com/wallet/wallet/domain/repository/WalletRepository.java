@@ -8,6 +8,9 @@ import java.util.Optional;
 
 @Repository
 public interface WalletRepository {
+
+    String delete(Long walletId);
+
     List<WalletDTO> findAll();
 
     Optional<WalletDTO> findByUserId(String userId);
